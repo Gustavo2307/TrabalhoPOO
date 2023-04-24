@@ -13,7 +13,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -30,7 +30,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -45,17 +45,16 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="txtNome" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtPedido" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtEndereco" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jScrollPane1" alignment="0" min="-2" pref="271" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" alignment="0" pref="271" max="32767" attributes="0"/>
                           <Component id="txtEndereco1" alignment="1" max="32767" attributes="0"/>
+                          <Component id="txtPedido" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnSabor" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="155" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="106" max="32767" attributes="0"/>
               <Component id="EnviarPedido" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
           </Group>
@@ -85,8 +84,9 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="txtEndereco1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSabor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="102" max="-2" attributes="0"/>
               <EmptySpace pref="34" max="32767" attributes="0"/>
               <Component id="EnviarPedido" min="-2" max="-2" attributes="0"/>
@@ -107,10 +107,13 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Quantidade de pizzas"/>
+        <Property name="text" type="java.lang.String" value="Qtde. Pizza"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPedido">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPedidoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -121,7 +124,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="EnviarPedido">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Enivar"/>
+        <Property name="text" type="java.lang.String" value="Enviar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EnviarPedidoActionPerformed"/>
@@ -151,6 +154,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Sabores das pizzas"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSabor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Escolha"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaborActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

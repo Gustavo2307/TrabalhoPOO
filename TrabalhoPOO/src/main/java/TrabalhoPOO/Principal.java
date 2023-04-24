@@ -2,7 +2,8 @@ package TrabalhoPOO;
 public class Principal extends javax.swing.JFrame {
     private Queue f = new Queue(200);
     private BancoCliente cl = new BancoCliente(200);
-    
+    //Pizza p = new Pizza();
+    double preco;
     public Principal() {
         initComponents();
         
@@ -25,6 +26,7 @@ public class Principal extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         txtEndereco1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        btnSabor = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -32,11 +34,17 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setText("Nome:");
 
-        jLabel3.setText("Quantidade de pizzas");
+        jLabel3.setText("Qtde. Pizza");
+
+        txtPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPedidoActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Tamanho das pizzas");
 
-        EnviarPedido.setText("Enivar");
+        EnviarPedido.setText("Enviar");
         EnviarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EnviarPedidoActionPerformed(evt);
@@ -55,11 +63,18 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel5.setText("Sabores das pizzas");
 
+        btnSabor.setText("Escolha");
+        btnSabor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaborActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
@@ -73,13 +88,13 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNome)
-                            .addComponent(txtPedido)
                             .addComponent(txtEndereco)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEndereco1, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap(155, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                            .addComponent(txtEndereco1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSabor)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addComponent(EnviarPedido)
                 .addGap(20, 20, 20))
         );
@@ -103,8 +118,9 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEndereco1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(75, 75, 75)
+                    .addComponent(jLabel5)
+                    .addComponent(btnSabor))
+                .addGap(74, 74, 74)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(EnviarPedido)
@@ -112,6 +128,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void EnviarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarPedidoActionPerformed
@@ -120,12 +137,27 @@ public class Principal extends javax.swing.JFrame {
         String nome= txtNome.getText();
         String pedido = txtPedido.getText();
         
-        
     }//GEN-LAST:event_EnviarPedidoActionPerformed
 
     private void txtEndereco1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEndereco1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEndereco1ActionPerformed
+
+    private void btnSaborActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaborActionPerformed
+        // TODO add your handling code here:
+        TelaSabor s = new TelaSabor();
+        //s.show();
+        s.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_btnSaborActionPerformed
+
+    private void txtPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPedidoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txtPedidoActionPerformed
+
+    
 
     /**
      * @param args the command line arguments
@@ -164,6 +196,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EnviarPedido;
+    private javax.swing.JButton btnSabor;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
